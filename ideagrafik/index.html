@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IdeaGrafik - Personalizados & Diseño Gráfico</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Icono favicon -->
+  <link rel="icon" href="image/logo.png" />
+  <!-- Meta tags para SEO -->
+  <meta name="description" content="IdeaGrafik - Diseño gráfico profesional y productos personalizados. Franelas, gorras, mugs, cojines y más. Envíos a nivel nacional.">
+  <meta name="keywords" content="diseño gráfico, personalizados, franelas, gorras, mugs, cojines, branding, Colombia">
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <!-- Reemplaza logo.png por tu logo -->
+        <img src="image/logo.png" alt="IdeaGrafik Logo" class="logo" />
+        <div class="brand-text">
+          <h1>IdeaGrafik</h1>
+          <p class="tag">Diseño Gráfico • Personalizados • Envíos Nacionales</p>
+        </div>
+      </div>
+
+     <nav class="nav">
+  <a href="#hero">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#tienda">Tienda</a>
+  <a href="#contacto">Contacto</a>
+
+  <!-- Botón carrito: icono + texto. En móviles se oculta el texto vía CSS -->
+  
+<button id="open-cart-btn" class="btn btn-outline" aria-label="Abrir carrito">
+    <span class="cart-icon" aria-hidden="true">
+      <!-- SVG cart (usa currentColor) -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path d="M6 6h13l-1.5 9h-10L6 6z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
+        <circle cx="18" cy="20" r="1.4" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="cart-text">Carrito</span>
+    <!-- Contador separado para que sea posicionable y siempre actualizable por el JS -->
+    <span id="cart-count" class="cart-badge" aria-live="polite">0</span>
+  </button>
+
+</nav>
+    </div>
+  </header>
+
+  <!-- HERO: Atención (AIDA) -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h2>Personaliza tu mundo con <span class="accent">IdeaGrafik</span></h2>
+        <p class="lead">Transformamos tus ideas en realidad con diseño gráfico profesional y productos personalizados de alta calidad. Franelas, gorras, mugs, cojines y mucho más — con envíos a nivel nacional.</p>
+        <div class="hero-ctas">
+          <a href="#tienda" class="btn btn-primary">🛍️ Ver Productos</a>
+          <a href="#servicios" class="btn btn-ghost">✨ Nuestros Servicios</a>
+        </div>
+        <!-- Mensaje de urgencia / oferta para AIDA - Deseo -->
+        <div class="promo">
+          <strong>🎉 Oferta Especial:</strong> 10% de descuento en tu primera compra con el código <code>IDEA10</code> — ¡Por tiempo limitado!
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <!-- Carrusel de franelas -->
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-slide active">
+              <img src="image/franela.jpeg" alt="Franela personalizada 1" class="carousel-image" />
+              <div class="carousel-overlay">
+                <div class="carousel-text">
+                  <div class="carousel-icon">👕</div>
+                  <div class="carousel-title">Franelas Personalizadas</div>
+                  <div class="carousel-subtitle">Diseño + Calidad + Creatividad</div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="image/franela2.jpeg" alt="Franela personalizada 2" class="carousel-image" />
+              <div class="carousel-overlay">
+                <div class="carousel-text">
+                  <div class="carousel-icon">🎨</div>
+                  <div class="carousel-title">Productos Únicos</div>
+                  <div class="carousel-subtitle">Cada diseño es especial</div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="image/taza.jpeg" alt="Taza personalizada" class="carousel-image" />
+              <div class="carousel-overlay">
+                <div class="carousel-text">
+                  <div class="carousel-icon">☕</div>
+                  <div class="carousel-title">Tazas Personalizadas</div>
+                  <div class="carousel-subtitle">Disfruta tu café único</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Controles del carrusel -->
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+            <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+          </div>
+          
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEREST: Servicios -->
+  <section id="servicios" class="section container">
+    <h3 class="section-title">Servicios que ofrecemos</h3>
+    <p class="section-intro">Diseño gráfico profesional y producción de personalizados con acabados de alta calidad. Transformamos tus ideas en productos únicos.</p>
+    <div class="grid grid-3">
+      <article class="card">
+        <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🎨</div>
+        <h4>Diseño Gráfico</h4>
+        <p>Logotipos, branding, piezas publicitarias y asesoría de imagen corporativa. Creamos identidades visuales que conectan con tu audiencia.</p>
+      </article>
+      <article class="card">
+        <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🛍️</div>
+        <h4>Productos Personalizados</h4>
+        <p>Franelas, gorras, cojines, tulas, mugs, cerveceros y muchos más. Cada producto es una oportunidad de expresar tu creatividad.</p>
+      </article>
+      <article class="card">
+        <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🚚</div>
+        <h4>Envíos Nacionales</h4>
+        <p>Envíos a todo el país con empaque seguro y seguimiento de pedido. Tu satisfacción es nuestra prioridad.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TIENDA: Interest -> inicio del embudo -->
+  <section id="tienda" class="section container">
+  <h3 class="section-title">Tienda - Productos destacados</h3>
+  <p class="section-intro">Elige tu diseño o solicita uno a medida. Añade al carrito y finaliza rápido.</p>
+
+  <!-- Carrusel ligero que se inicializa desde app.js -->
+  <div id="product-carousel" class="product-carousel hidden" aria-roledescription="carousel">
+    <div id="product-carousel-wrapper" class="product-carousel-wrapper"></div>
+
+    <div class="product-carousel-controls" aria-hidden="true">
+      <button id="pc-prev" class="product-carousel-btn" aria-label="Anterior">‹</button>
+      <button id="pc-next" class="product-carousel-btn" aria-label="Siguiente">›</button>
+    </div>
+
+    <div id="pc-indicators" class="product-carousel-indicators" role="tablist"></div>
+  </div>
+
+  <div id="products-grid" class="grid grid-3" style="margin-top:2rem;"></div>
+</section>
+
+  <!-- DESEO: testimonios / prueba social -->
+  <section class="section container testimonials">
+    <h3 class="section-title">Lo que dicen nuestros clientes</h3>
+    <p class="section-intro">La satisfacción de nuestros clientes es nuestro mayor logro. Descubre por qué confían en nosotros.</p>
+    <div class="grid grid-3">
+      <blockquote class="testimonial card">
+        <p>"Excelente calidad en las franelas, el diseño quedó perfecto. El proceso fue súper fácil y el resultado superó mis expectativas."</p>
+        <footer>— María P., Emprendedora</footer>
+      </blockquote>
+      <blockquote class="testimonial card">
+        <p>"Buen servicio y envío rápido. La atención al cliente es excepcional. Recomendados 100% para cualquier proyecto personalizado."</p>
+        <footer>— Juan R., Empresario</footer>
+      </blockquote>
+      <blockquote class="testimonial card">
+        <p>"La atención personalizada nos ayudó a crear el merchandising ideal para nuestra marca. Profesionales de verdad."</p>
+        <footer>— Agencia Creativa X</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ACTION: Checkout / formulario rápido -->
+  <section id="contacto" class="section container contact-section">
+    <h3 class="section-title">¿Listo para personalizar?</h3>
+    <p class="section-intro">Contáctanos y hagamos realidad tu proyecto. Estamos aquí para ayudarte en cada paso.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">💬</div>
+        <h3>Contáctanos</h3>
+        <p style="text-align: center; margin-bottom: 2rem;">
+          ✈️ Envíos a nivel Nacional<br>
+          📱 WhatsApp: <strong>304-2420735</strong><br>
+          ⚡ Respuesta rápida garantizada
+        </p>
+        <form id="contact-form">
+          <label>Nombre
+            <input type="text" id="contact-name" required placeholder="Tu nombre completo" />
+          </label>
+          <label>Teléfono / WhatsApp
+            <input type="tel" id="contact-phone" required placeholder="304-XXX-XXXX" />
+          </label>
+          <label>Mensaje
+            <textarea id="contact-msg" rows="4" placeholder="Cuéntanos tu idea, qué productos necesitas, colores preferidos..."></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">🚀 Enviar Mensaje</button>
+            <button type="button" id="open-cart-btn-2" class="btn btn-outline">🛒 Ver Carrito</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🛍️</div>
+        <h3>Checkout Rápido</h3>
+        <p style="text-align: center; margin-bottom: 2rem;">Completa tu pedido directamente desde aquí. Proceso seguro y fácil.</p>
+        <div id="mini-cart" class="mini-cart">
+          <!-- Resumen del carrito generado por app.js -->
+        </div>
+        <div id="checkout-area">
+          <!-- Form de checkout generado por app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Sección principal del footer -->
+      <div class="footer-main">
+        <div class="footer-section">
+          <div class="footer-brand">
+            <img src="image/logo.png" alt="IdeaGrafik Logo" class="footer-logo" />
+            <h3>IdeaGrafik</h3>
+            <p class="footer-tagline">Transformando ideas en realidad</p>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Diseño Gráfico</a></li>
+            <li><a href="#tienda">Productos Personalizados</a></li>
+            <li><a href="#contacto">Consultoría</a></li>
+            <li><a href="#contacto">Branding</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Productos</h4>
+          <ul class="footer-links">
+            <li><a href="#tienda">Franelas</a></li>
+            <li><a href="#tienda">Gorras</a></li>
+            <li><a href="#tienda">Tazas</a></li>
+            <li><a href="#tienda">Cojines</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <div>
+                <strong>WhatsApp</strong>
+                <p>304-2420735</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✈️</span>
+              <div>
+                <strong>Envíos</strong>
+                <p>Nivel Nacional</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🇨🇴</span>
+              <div>
+                <strong>Ubicación</strong>
+                <p>Colombia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Línea divisoria -->
+      <div class="footer-divider"></div>
+      
+      <!-- Footer inferior -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p>© <span id="year"></span> IdeaGrafik. Todos los derechos reservados.</p>
+          <p class="footer-subtitle">Diseño gráfico profesional y productos personalizados de calidad</p>
+        </div>
+        <div class="footer-bottom-right">
+          <a href="#" id="scroll-top" class="btn btn-ghost scroll-top-btn">
+            <span class="scroll-icon">⬆️</span>
+            <span class="scroll-text">Ir arriba</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carrito modal / panel -->
+  <aside id="cart-panel" class="cart-panel hidden" aria-hidden="true">
+    <div class="cart-panel-inner">
+      <button id="close-cart-btn" class="cart-close">&times;</button>
+      <h4>Tu Carrito</h4>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <p>Subtotal: <strong id="cart-subtotal">$0</strong></p>
+        <p>Envío: <strong id="cart-shipping">$6.00</strong></p>
+        <p>Total: <strong id="cart-total">$0</strong></p>
+      </div>
+      <div class="cart-actions">
+        <button id="checkout-btn" class="btn btn-primary">Finalizar Compra</button>
+        <button id="clear-cart-btn" class="btn btn-outline">Vaciar Carrito</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mensajes / notificaciones -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- Firebase SDKs (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Tu configuración (la que pegaste)
+    window._firebaseConfig = {
+      apiKey: "AIzaSyAKQRkMXePWmnAbvTDUvVTbBUlu_60Rahk",
+      authDomain: "ideagrafik-dd035.firebaseapp.com",
+      projectId: "ideagrafik-dd035",
+      storageBucket: "ideagrafik-dd035.firebasestorage.app",
+      messagingSenderId: "412292476932",
+      appId: "1:412292476932:web:4331da4e759e3f00e84551",
+      measurementId: "G-L4G7QSJJ3P"
+    };
+  </script>
+
+  <!-- luego cargar app.js -->
+  <script src="app.js"></script>
+</body>
+</html>
